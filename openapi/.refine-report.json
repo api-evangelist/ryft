@@ -1,0 +1,14 @@
+{
+  "provider": "ryft",
+  "sources": [
+    "ryft-ingest-api-openapi.yml"
+  ],
+  "outputs": [
+    "ryft-ingest-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

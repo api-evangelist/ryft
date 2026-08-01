@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.ryft.io/integrations/ryft-mcp
+status: published            # Private Preview at capture time (contact rep for access)
+availability: private-preview
+server:
+  name: ryft
+  description: >-
+    Ryft MCP is a Model Context Protocol server that enriches AI agents with
+    full lakehouse context - table metadata, query history, and domain
+    knowledge - so agents can write accurate queries and answer business
+    questions about your Apache Iceberg lakehouse without guessing.
+  transport: http
+  url: https://app.ryft.io/mcp
+  auth:
+    type: oauth2
+    flow: authorization_code
+    authorization_server: https://app.ryft.io/.well-known/oauth-authorization-server
+    note: Browser login with Ryft credentials (Auth0). PKCE (S256), dynamic client registration.
+clients:
+  - name: Cursor
+    config: '{"mcpServers":{"ryft":{"type":"http","url":"https://app.ryft.io/mcp"}}}'
+  - name: Claude Code
+    install: claude mcp add --transport http ryft https://app.ryft.io/mcp
+  - name: Claude
+    setup: Settings > Connectors > Add custom connector > URL https://app.ryft.io/mcp
+tools:
+  - name: search_tables
+    description: Search for Iceberg tables in your lakehouse (documented example tool).
+    source: https://docs.ryft.io/integrations/ryft-mcp
+notes: >-
+  Additional tools are exposed by the hosted server but not fully enumerated in
+  public docs; search_tables is the one documented by name. Tool list may expand.

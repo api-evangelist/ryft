@@ -1,28 +1,115 @@
 aid: ryft
 name: Ryft
-description: 'Ryft is a company surfaced as a portfolio company of bessemer-venture-partners, index-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a
-  lead awaiting the enrichment pipeline.'
+description: >-
+  Ryft is the intelligent Apache Iceberg management platform - a data lakehouse
+  optimization layer that continuously monitors, manages, and optimizes Iceberg
+  tables across query engines and clouds. It provides automated table
+  compaction, snapshot and data lifecycle management, orphan-file and
+  compliance cleanup (GDPR/CCPA), an Asset and Query Explorer, and usage-based
+  self-tuning that reduces lakehouse TCO and speeds up queries. Ryft integrates
+  with AWS (Athena, Glue, Redshift, S3 Tables), Google Cloud/BigLake, Azure,
+  Microsoft OneLake, Databricks, Snowflake, Starburst, Trino, StarRocks, and any
+  Iceberg REST Catalog. For engines it does not natively support, the Ryft Ingest
+  API accepts query telemetry directly, and the Ryft MCP server enriches AI
+  agents with live lakehouse context. Backed by Bessemer Venture Partners and
+  Index Ventures; acquired by Cyera in 2026.
 url: https://raw.githubusercontent.com/api-evangelist/ryft/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.ryft.io/static/assets/icon_full_new.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bessemer-venture-partners
 - index-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-portfolio-lead
+x-acquired-by: cyera
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-- Unknown
-apis: []
+- Data
+- Data Lake
+- Lakehouse
+- Apache Iceberg
+- Data Management
+- Analytics
+- Query Optimization
+- AI
+- MCP
+apis:
+- aid: ryft:ryft-ingest-api
+  name: Ryft Ingest API
+  description: Push query-execution telemetry to Ryft.
+  humanURL: https://docs.ryft.io/integrations/custom-engine
+  baseURL: https://ingest.ryft.io
+  tags:
+  - Ingest
+  properties:
+  - type: OpenAPI
+    url: openapi/ryft-ingest-api-openapi.yml
+  - type: Authentication
+    url: authentication/ryft-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/ryft-domain-security.yml
 - type: Website
   url: https://www.ryft.io/
+- type: DeveloperPortal
+  url: https://docs.ryft.io/
+- type: Documentation
+  url: https://docs.ryft.io/
+- type: APIReference
+  url: https://docs.ryft.io/integrations/custom-engine
+- type: GettingStarted
+  url: https://docs.ryft.io/introduction
+- type: Blog
+  url: https://www.ryft.io/blog
+- type: Support
+  url: https://www.ryft.io/contact-us
+- type: TermsOfService
+  url: https://www.ryft.io/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.ryft.io/privacy-policy
+- type: SignUp
+  url: https://app.ryft.io/
+- type: Authentication
+  url: authentication/ryft-authentication.yml
+- type: MCPServer
+  url: mcp/ryft-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/ryft-llms.txt
+- type: WellKnown
+  url: well-known/ryft-well-known.yml
+- type: Conventions
+  url: conventions/ryft-conventions.yml
+- type: Conformance
+  url: conformance/ryft-conformance.yml
+- type: Compliance
+  url: https://docs.ryft.io/administration/security-and-privacy
+- type: Overlay
+  url: overlays/ryft-ingest-overlay.yaml

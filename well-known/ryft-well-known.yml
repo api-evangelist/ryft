@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: probe of /.well-known/ across Ryft hosts
+hosts:
+  - host: https://app.ryft.io
+    documents:
+      - path: /.well-known/oauth-authorization-server   # RFC 8414 (Auth0-backed, used by Ryft MCP)
+        status: 200
+        file: ryft-oauth-authorization-server.json
+      - path: /.well-known/oauth-protected-resource      # RFC 9728
+        status: 429   # rate-limited (Auth0) at probe time, not a real document
+      - path: /.well-known/openid-configuration
+        status: 429   # rate-limited (Auth0) at probe time
+      - path: /.well-known/security.txt
+        status: 302   # redirect to login, no published security.txt
+  - host: https://ingest.ryft.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+  - host: https://www.ryft.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://docs.ryft.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404

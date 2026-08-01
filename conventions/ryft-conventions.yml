@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source:
+  - https://docs.ryft.io/integrations/custom-engine
+  - https://docs.ryft.io/administration/security-and-privacy
+scope: Ryft Ingest API (ingest.ryft.io)
+authentication:
+  style: api-key header
+  header: X-Ryft-Token
+  transport: HTTPS only (TLS 1.2+); HTTP redirected to HTTPS
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key contract is documented. Each query object carries a
+    client-supplied queryId, but the docs do not define de-duplication or
+    idempotent replay semantics on it.
+pagination:
+  supported: false
+  notes: Ingest is write-only (push); no list/read pagination surface documented.
+bulk:
+  supported: true
+  mechanism: POST a JSON array of query objects to /ingest/push/queries.
+content_type: application/json
+error_envelope:
+  api_level: >-
+    A 200 response means the message was accepted. Per-query failures are
+    described in-payload via the optional failureInfo object (errorCode.type of
+    USER_ERROR | INTERNAL_ERROR | INSUFFICIENT_RESOURCES | EXTERNAL), not as a
+    separate HTTP error contract.
+rate_limit_signaling:
+  documented: false
+versioning:
+  scheme: none-documented
+  notes: Single unversioned ingest path (/ingest/push/queries).
+cross_links:
+  authentication: authentication/ryft-authentication.yml
+  openapi: openapi/ryft-ingest-openapi.yml

@@ -1,0 +1,7 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: ryft-push-query-data.md
+    name: Push query data to Ryft
+    api: openapi/ryft-ingest-openapi.yml
+    operations: [pushQueries]

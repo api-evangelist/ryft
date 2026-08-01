@@ -1,0 +1,56 @@
+# Ryft Docs
+
+> Ryft Platform Documentation
+
+## Docs
+
+- [System Architecture](https://docs.ryft.io/administration/architecture.md): Learn how Ryft's architecture is designed, including full separation between the control plane and the data plane to keep your data secure.
+- [Managing Users](https://docs.ryft.io/administration/managing-users.md): Invite users, assign roles, and control access across Ryft organizations. Covers the different roles, permissions, and how to manage them.
+- [Configuring Okta SSO](https://docs.ryft.io/administration/okta-sso.md): Step-by-step guide to set up Okta single sign-on for Ryft. Create an OIDC app, configure redirect URIs, and share credentials with Ryft.
+- [Security & Privacy](https://docs.ryft.io/administration/security-and-privacy.md): Ryft security overview covering encryption, least-privilege access, SSO, MFA, and compliance certifications including SOC2 and ISO-27001.
+- [BYOC Deployment](https://docs.ryft.io/deployment-guides/byoc-deployment.md): Deploy the Ryft data plane in your own AWS account with Bring Your Own Cloud. Configure IAM roles via CloudFormation or Terraform for secure access.
+- [AWS PrivateLink Setup](https://docs.ryft.io/deployment-guides/private-link.md): Set up AWS PrivateLink for secure private connectivity between your VPC and Ryft services. Covers endpoint creation and load balancer configuration.
+- [FAQ](https://docs.ryft.io/faq.md): Find answers to common questions about Ryft, including integrations, features, security, and scale.
+- [AWS Athena](https://docs.ryft.io/integrations/athena.md): Connect AWS Athena to Ryft for query history analysis and usage-based Iceberg optimizations. Set up IAM roles via CloudFormation or manually.
+- [AWS](https://docs.ryft.io/integrations/aws-role-setup.md): Integrate AWS services to Ryft with an IAM role. Use CloudFormation, Terraform, or configure the role manually in your account.
+- [BigLake Metastore](https://docs.ryft.io/integrations/biglake-metastore.md): Connect Google BigLake Metastore to Ryft for Iceberg table management and visibility.
+- [Custom Engine](https://docs.ryft.io/integrations/custom-engine.md): Send query data from any custom engine to Ryft via the Ingest API. Covers authentication, payload format, and bulk ingestion.
+- [Databricks](https://docs.ryft.io/integrations/databricks.md): Connect Databricks to Ryft to sync Iceberg query history and table metadata.
+- [AWS Glue Data Catalog](https://docs.ryft.io/integrations/glue-catalog.md): Connect AWS Glue Data Catalog to Ryft for Iceberg table management and optimization. Requires Glue and S3 access - set up via CloudFormation, Terraform, or manually.
+- [Google Cloud](https://docs.ryft.io/integrations/google-cloud.md): Connect Google Cloud data lakes to Ryft for Iceberg table management and optimization.
+- [Hive Metastore](https://docs.ryft.io/integrations/hive-metastore.md): Connect Hive Metastore to Ryft via the Thrift API. Set up PrivateLink or IP access lists for network connectivity and configure S3 metadata access.
+- [Iceberg REST Catalog](https://docs.ryft.io/integrations/iceberg-rest-catalog.md): Integrate any Iceberg REST Catalog with Ryft.
+- [Managed Deployment](https://docs.ryft.io/integrations/managed-deployment.md): Set up Ryft managed deployment where Ryft hosts and operates everything. Create a data plane IAM role for catalog and S3 access in your account.
+- [Microsoft Azure](https://docs.ryft.io/integrations/microsoft-azure.md): Connect Microsoft Azure data lakes to Ryft for Iceberg table management and visibility.
+- [Microsoft OneLake](https://docs.ryft.io/integrations/onelake.md): Connect Microsoft Fabric OneLake to Ryft via Iceberg REST Catalog.
+- [Apache Polaris](https://docs.ryft.io/integrations/polaris-catalog.md): Connect Apache Polaris to Ryft using the Iceberg REST API.
+- [Amazon Redshift](https://docs.ryft.io/integrations/redshift.md): Connect Amazon Redshift to Ryft to sync Iceberg query history and table metadata.
+- [Ryft MCP](https://docs.ryft.io/integrations/ryft-mcp.md): Enrich AI agents with lakehouse context using the Ryft MCP server. Supports any agent framework.
+- [S3 Tables](https://docs.ryft.io/integrations/s3-tables.md): Connect Amazon S3 Tables to Ryft for Iceberg table management and storage optimization.
+- [Snowflake](https://docs.ryft.io/integrations/snowflake.md): Connect Snowflake to Ryft by creating a dedicated user, role, and warehouse. Grant permissions for query history and Iceberg metadata access.
+- [Apache Spark](https://docs.ryft.io/integrations/spark.md): Install the Ryft Spark plugin to capture real-time execution plans and job history, for app visibility and usage-based optimization.
+- [Starburst Galaxy](https://docs.ryft.io/integrations/starburst-galaxy.md): Connect Starburst Galaxy to Ryft to sync query history, tables, and views.
+- [StarRocks](https://docs.ryft.io/integrations/starrocks.md): Connect StarRocks to Ryft to sync Iceberg query history and table metadata.
+- [Trino](https://docs.ryft.io/integrations/trino.md): Connect Trino to Ryft by configuring the HTTP event listener on your coordinator, for full query visibility and usage-based optimizations.
+- [Welcome to Ryft](https://docs.ryft.io/introduction.md): Ryft is the Intelligent Iceberg Management Platform - continuously monitoring, managing and optimizing your data.
+- [Lake Formation](https://docs.ryft.io/lakehouse-management/access-management/lake-formation.md)
+- [Access Management](https://docs.ryft.io/lakehouse-management/access-management/overview.md)
+- [Polaris](https://docs.ryft.io/lakehouse-management/access-management/polaris.md)
+- [Snowflake](https://docs.ryft.io/lakehouse-management/access-management/snowflake.md)
+- [Starburst](https://docs.ryft.io/lakehouse-management/access-management/starburst.md)
+- [Trino](https://docs.ryft.io/lakehouse-management/access-management/trino.md)
+- [Asset Explorer](https://docs.ryft.io/lakehouse-management/asset-explorer.md): View all Iceberg tables in one workbench with storage metrics, usage stats, and saved views. Filter, sort, and browse to answer questions about your lakehouse.
+- [Catalog](https://docs.ryft.io/lakehouse-management/catalog.md): Browse all data assets across catalogs and namespaces. View storage totals, table counts, write activity, and configure table management settings.
+- [Query Explorer](https://docs.ryft.io/lakehouse-management/query-explorer.md): Analyze every query across your lakehouse engines. Filter by 50+ fields to identify slow queries, spot usage anomalies, and audit data access patterns.
+- [Compliance Cleanup](https://docs.ryft.io/lakehouse-management/table-management/compliance-cleanup.md): Ensure physical removal of deleted Iceberg data for GDPR and CCPA compliance. Merges delete files with data files to eliminate non-compliant records.
+- [Data Compaction](https://docs.ryft.io/lakehouse-management/table-management/data-compaction.md): Rewrite small Iceberg data files into larger, optimized ones. Choose automatic self-tuning or customize rewrite strategy when needed.
+- [Data Lifecycle](https://docs.ryft.io/lakehouse-management/table-management/data-lifecycle.md): Manage Iceberg data retention and storage tiering. Automatically delete old partitions or archive them to cold storage.
+- [Managed Tables](https://docs.ryft.io/lakehouse-management/table-management/managed-tables.md): Enable Ryft management at the table, namespace, or catalog level. Intelligent self-tuning adapts to workload patterns with full customization options.
+- [Orphan File Cleanup](https://docs.ryft.io/lakehouse-management/table-management/orphan-files.md): Automatically scan for and remove unreferenced Iceberg files left by failed ingestion or expired snapshots. Reduces storage costs safely.
+- [Snapshot Lifecycle](https://docs.ryft.io/lakehouse-management/table-management/snapshot-lifecycle.md): Manage Iceberg snapshots end-to-end with automated expiration, daily and weekly recovery points, and safe restore. Control retention and storage growth.
+- [Snapshot Restoration](https://docs.ryft.io/lakehouse-management/table-management/snapshot-restoration.md): Restore an Iceberg table to a previous snapshot directly from Ryft. Uses native Iceberg semantics with lineage-safe guardrails and cooldown limits.
+- [Platform Overview](https://docs.ryft.io/platform.md): Monitor, manage, and optimize your Apache Iceberg lakehouse from a single platform. Reduce costs by up to 50% and accelerate queries up to 10x.
+
+## Optional
+
+- [Book a Demo](https://cal.com/team/ryft/ryft-intro)

@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source:
+  - https://docs.ryft.io/integrations/custom-engine
+  - https://docs.ryft.io/integrations/ryft-mcp
+  - https://docs.ryft.io/administration/security-and-privacy
+  - https://docs.ryft.io/administration/okta-sso
+docs: https://docs.ryft.io/administration/security-and-privacy
+summary:
+  types: [apiKey, oauth2, openIdConnect]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode]
+  identity_provider: Auth0
+  sso: Okta OIDC (organization SSO)
+schemes:
+  - name: RyftIngestToken
+    type: apiKey
+    in: header
+    parameter: X-Ryft-Token
+    used_by: Ryft Ingest API (ingest.ryft.io)
+    description: Per-environment ingest token supplied by Ryft.
+    sources: [openapi/ryft-ingest-openapi.yml]
+  - name: RyftMcpOAuth
+    type: oauth2
+    flow: authorizationCode
+    authorization_endpoint: https://app.ryft.io/authorize
+    token_endpoint: https://app.ryft.io/token
+    registration_endpoint: https://app.ryft.io/register
+    code_challenge_methods: [S256]
+    grant_types: [authorization_code, refresh_token]
+    used_by: Ryft MCP server (app.ryft.io/mcp) and the Ryft web app
+    provider: Auth0
+    sources: [well-known/ryft-oauth-authorization-server.json]
+  - name: OktaSSO
+    type: openIdConnect
+    description: >-
+      Organization single sign-on via Okta OIDC. Admins create an OIDC app,
+      configure redirect URIs, and share credentials with Ryft.
+    used_by: Ryft web app (organization login)
+    docs: https://docs.ryft.io/administration/okta-sso
+notes: >-
+  Cloud integrations (AWS/GCP/Azure/Snowflake/Databricks) use least-privilege,
+  read-only service accounts / IAM roles rather than end-user API auth.

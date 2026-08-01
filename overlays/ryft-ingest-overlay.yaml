@@ -1,0 +1,16 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Ryft Ingest API
+  version: 1.0.0
+extends: openapi/ryft-ingest-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: ryft
+      x-apievangelist-category: [data-lakehouse, apache-iceberg, observability]
+      x-apievangelist-mcp: https://app.ryft.io/mcp
+  - target: $.paths['/ingest/push/queries'].post
+    update:
+      x-apievangelist-notes: >-
+        Accepts a single query object or a JSON array (bulk). 200 = accepted.
+        Per-query failures reported in-payload via failureInfo, not as HTTP errors.
