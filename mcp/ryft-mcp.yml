@@ -1,7 +1,8 @@
 generated: '2026-07-21'
 method: searched
 source: https://docs.ryft.io/integrations/ryft-mcp
-status: published            # Private Preview at capture time (contact rep for access)
+status: published
+status_raw: published
 availability: private-preview
 server:
   name: ryft
