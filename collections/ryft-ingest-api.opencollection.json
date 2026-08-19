@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ryft Ingest API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ryft-Token",
+      "value": "{{X-Ryft-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ingest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Push query data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.ryft.io/ingest/push/queries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Ryft-Token",
+              "value": "{{X-Ryft-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Send one query object, or a JSON array of query objects for bulk ingestion. A 200 response means the message was accepted and will be processed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

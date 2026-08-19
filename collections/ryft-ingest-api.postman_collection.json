@@ -1,0 +1,160 @@
+{
+  "item": [
+    {
+      "id": "c1d4b2c9-84f8-482a-8c6d-93b5cb28f8f5",
+      "name": "Ingest",
+      "description": {
+        "content": "Push query-execution telemetry to Ryft.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9a7261c-15ad-4ef9-ac98-a231cf8c9cd6",
+          "name": "Push query data",
+          "request": {
+            "name": "Push query data",
+            "description": {
+              "content": "Send one query object, or a JSON array of query objects for bulk ingestion. A 200 response means the message was accepted and will be processed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ingest",
+                "push",
+                "queries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Ryft-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"catalog\": \"<string>\",\n    \"schema\": \"<string>\",\n    \"queryType\": \"<string>\",\n    \"serverVersion\": \"<string>\",\n    \"user\": \"<string>\",\n    \"userAgent\": \"<string>\"\n  },\n  \"query\": \"<string>\",\n  \"queryId\": \"<string>\",\n  \"queryState\": \"<string>\",\n  \"timestamp\": \"<dateTime>\",\n  \"duration_ms\": \"<number>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"failureInfo\": {\n    \"errorCode\": {\n      \"type\": \"<string>\",\n      \"code\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    \"failureMessage\": \"<string>\",\n    \"failureType\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7158f2d0-67cf-49af-a242-0100d0e7d471",
+              "name": "Message accepted and queued for processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ingest",
+                    "push",
+                    "queries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ryft-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"context\": {\n    \"catalog\": \"iceberg\",\n    \"schema\": \"gold\",\n    \"queryType\": \"SELECT\",\n    \"user\": \"my-service\",\n    \"userAgent\": \"my-client\"\n  },\n  \"timestamp\": \"2026-03-10T12:00:00.000Z\",\n  \"duration_ms\": 100,\n  \"query\": \"SELECT * FROM gold.my_table\",\n  \"queryId\": \"test-001\",\n  \"queryState\": \"FINISHED\",\n  \"tags\": [\n    \"source:my-engine\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ingest.ryft.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ryft-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f1e0cac-51fa-496a-852f-ed5fc7542a15",
+    "name": "Ryft Ingest API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ryft Ingest API accepts query-execution data from any custom query engine so Ryft can build usage-based Apache Iceberg optimizations. Send query telemetry (SQL text, timing, state, context) as JSON, singly or in bulk. Authenticated with a per-environment ingest token.\n\nContact Support:\n Name: Ryft Support\n Email: support@ryft.io",
+      "type": "text/plain"
+    }
+  }
+}
