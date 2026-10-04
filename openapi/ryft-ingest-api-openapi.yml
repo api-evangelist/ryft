@@ -84,38 +84,6 @@ components:
         failureType:
           type: string
           description: Exception or error class name.
-    QueryContext:
-      type: object
-      description: Query environment context. All fields optional; pass {} if none.
-      properties:
-        catalog:
-          type: string
-          description: Catalog name (e.g. iceberg).
-        schema:
-          type: string
-          description: Default namespace for unqualified table names.
-        queryType:
-          type: string
-          enum:
-          - SELECT
-          - EXPLAIN
-          - DESCRIBE
-          - INSERT
-          - UPDATE
-          - DELETE
-          - ANALYZE
-          - DATA_DEFINITION
-          - ALTER_TABLE_EXECUTE
-          - MERGE
-        serverVersion:
-          type: string
-          description: Query engine version.
-        user:
-          type: string
-          description: User or service account that ran the query.
-        userAgent:
-          type: string
-          description: Client identifier.
     Query:
       type: object
       required:
@@ -160,6 +128,38 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/FailureInfo'
+    QueryContext:
+      type: object
+      description: Query environment context. All fields optional; pass {} if none.
+      properties:
+        catalog:
+          type: string
+          description: Catalog name (e.g. iceberg).
+        schema:
+          type: string
+          description: Default namespace for unqualified table names.
+        queryType:
+          type: string
+          enum:
+          - SELECT
+          - EXPLAIN
+          - DESCRIBE
+          - INSERT
+          - UPDATE
+          - DELETE
+          - ANALYZE
+          - DATA_DEFINITION
+          - ALTER_TABLE_EXECUTE
+          - MERGE
+        serverVersion:
+          type: string
+          description: Query engine version.
+        user:
+          type: string
+          description: User or service account that ran the query.
+        userAgent:
+          type: string
+          description: Client identifier.
   securitySchemes:
     RyftIngestToken:
       type: apiKey
