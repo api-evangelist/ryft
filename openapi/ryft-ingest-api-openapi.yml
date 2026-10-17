@@ -57,33 +57,6 @@ paths:
           description: Message accepted and queued for processing.
 components:
   schemas:
-    FailureInfo:
-      type: object
-      properties:
-        errorCode:
-          type: object
-          required:
-          - type
-          properties:
-            type:
-              type: string
-              enum:
-              - USER_ERROR
-              - INTERNAL_ERROR
-              - INSUFFICIENT_RESOURCES
-              - EXTERNAL
-            code:
-              type: number
-              description: Numeric error code (free-form).
-            name:
-              type: string
-              description: Error name (free-form).
-        failureMessage:
-          type: string
-          description: Human-readable error description.
-        failureType:
-          type: string
-          description: Exception or error class name.
     Query:
       type: object
       required:
@@ -128,6 +101,33 @@ components:
           - type: array
             items:
               $ref: '#/components/schemas/FailureInfo'
+    FailureInfo:
+      type: object
+      properties:
+        errorCode:
+          type: object
+          required:
+          - type
+          properties:
+            type:
+              type: string
+              enum:
+              - USER_ERROR
+              - INTERNAL_ERROR
+              - INSUFFICIENT_RESOURCES
+              - EXTERNAL
+            code:
+              type: number
+              description: Numeric error code (free-form).
+            name:
+              type: string
+              description: Error name (free-form).
+        failureMessage:
+          type: string
+          description: Human-readable error description.
+        failureType:
+          type: string
+          description: Exception or error class name.
     QueryContext:
       type: object
       description: Query environment context. All fields optional; pass {} if none.
