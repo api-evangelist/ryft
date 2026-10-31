@@ -64,6 +64,113 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ryft is a company surfaced as a portfolio company of bessemer-venture-partners, index-ventures and added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting the enrichment pipeline.
+Ryft is the intelligent Apache Iceberg management platform - a data lakehouse optimization layer that continuously monitors, manages, and optimizes Iceberg tables across query engines and clouds. It provides automated table compaction, snapshot and data lifecycle management, orphan-file and compliance cleanup (GDPR/CCPA), an Asset and Query Explorer, and usage-based self-tuning that reduces lakehouse TCO and speeds up queries. Ryft integrates with AWS (Athena, Glue, Redshift, S3 Tables), Google Cloud/BigLake, Azure, Microsoft OneLake, Databricks, Snowflake, Starburst, Trino, StarRocks, and any Iceberg REST Catalog. For engines it does not natively support, the Ryft Ingest API accepts query telemetry directly, and the Ryft MCP server enriches AI agents with live lakehouse context. Backed by Bessemer Venture Partners and Index Ventures; acquired by Cyera in 2026.
 
-Backed by: bessemer-venture-partners, index-ventures — https://www.ryft.io/
+**Areas:** Company · Data · Data Lake · Lakehouse · Apache Iceberg · Data Management · Analytics · Query Optimization · Artificial Intelligence · MCP
+
+## Ryft on APIs.io
+
+Everything profiled for Ryft is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ryft/](https://apis.io/providers/ryft/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Ryft Ingest API](https://apis.io/apis/ryft/ryft-ingest-api/) — Push query-execution telemetry to Ryft.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [ryft](https://apis.io/servers/ryft/ryft/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Ryft Ingest API](https://apis.io/collections/ryft/open-ryft-ingest-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Ryft Ingest Overlay](https://apis.io/overlays/ryft/ryft-ingest-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ryft Authentication](https://apis.io/security/ryft/ryft-authentication/)
+- [Ryft Domain Security](https://apis.io/security/ryft/ryft-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.ryft.io/)
+- [Documentation](https://docs.ryft.io/)
+- [Getting started](https://docs.ryft.io/introduction)
+- [API reference](https://docs.ryft.io/integrations/custom-engine)
+- [Sign up](https://app.ryft.io/)
+- [Support](https://www.ryft.io/contact-us)
+- [Blog](https://www.ryft.io/blog)
+- [Compliance](https://docs.ryft.io/administration/security-and-privacy)
+- [Terms of service](https://www.ryft.io/terms-of-service)
+- [Privacy policy](https://www.ryft.io/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 42.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 51.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 35.5 |
+
+**Agent readiness 42.6** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 27.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ryft/](https://apis.io/providers/ryft/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ryft: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ryft/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
